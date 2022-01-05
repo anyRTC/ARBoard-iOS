@@ -1,0 +1,6 @@
+framework module Pods_AR_Board_Tutorial {
+  umbrella header "Pods-AR-Board-Tutorial-umbrella.h"
+
+  export *
+  module * { export * }
+}

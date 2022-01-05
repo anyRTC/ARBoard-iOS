@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02DD422124A7732719E29B2C6DE2E63F /* DWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B4581EEE102B7FBC2DF175DD1E866 /* DWKWebView.m */; };
+		1CD35EB7AF8717B2936F797A7F4598FE /* DWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 594F042554DF4D5BDA3F5C6BAFDA073B /* DWKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2912FBCDC5FF3EE06845F125767185 /* DSCallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8173358C3AC33B762C1ED3FF079F59A1 /* DSCallInfo.m */; };
+		51A7D1ED437C4C91BD96E5245176DB9A /* DSCallInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 111EF0B80D50CC2FE5362A5DF71824EC /* DSCallInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54397034A0FB68FF428E0F4169E23A7D /* dsBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA0E33DEAA86CEF1CE67B3E7D6A662A4 /* dsBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		760277DCD17B87926D31937D97A4DB0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		7AFDB997B9119CB5AF876EED1B62D2EF /* dsbridge.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B939A2766B5607F7152EA5746D7C61 /* dsbridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B52A12ED26A3ECBA029E445894338EC /* Pods-AR-Board-Tutorial-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D14230E3E057BD052947C8F3AF377FE4 /* Pods-AR-Board-Tutorial-dummy.m */; };
+		91460D4EA8F6BC550FA112C4ABF8A512 /* Pods-AR-Board-Tutorial-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E5509692AC1BC179879EF5C91CD3DEF /* Pods-AR-Board-Tutorial-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1DE887D102B552019F5F9BE80E6CE2B /* JSBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5747FDC7F73CD8D227A4B35BD53E1D63 /* JSBUtil.m */; };
+		B34A70589B5285D9B233872CED014EA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		B6C4FE943219AEC34383FD77A6983F61 /* dsBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E68BD10E654B3E34960703187C442670 /* dsBridge-dummy.m */; };
+		C0574129DD4371FA64FE31DE3472340E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		C64A7A369DE079585D6439FBA5174FCE /* JSBUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C7E0E15BA9C496A06B653582E291C364 /* JSBUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C88C2A17D04F276B10CE0806EBB137E6 /* InternalApis.h in Headers */ = {isa = PBXBuildFile; fileRef = B7BF915FD6670C78DB79E6BBA6634120 /* InternalApis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9D85D50F9B84F504B05EB9F61E88C32 /* InternalApis.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B480DB4ACF13256F13BA38C308214 /* InternalApis.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		943B06AC01BB8FE62368C230FC114017 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A6F633BD0A4B9EF892715BEB76AC948;
+			remoteInfo = dsBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A3EC0DE9D960EA7A285EC7121431D61 /* Pods-AR-Board-Tutorial.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AR-Board-Tutorial.modulemap"; sourceTree = "<group>"; };
+		0E5509692AC1BC179879EF5C91CD3DEF /* Pods-AR-Board-Tutorial-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AR-Board-Tutorial-umbrella.h"; sourceTree = "<group>"; };
+		111EF0B80D50CC2FE5362A5DF71824EC /* DSCallInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCallInfo.h; path = dsbridge/DSCallInfo.h; sourceTree = "<group>"; };
+		1EEC987F214E03C49E0909B8B87632C1 /* dsBridge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dsBridge-Info.plist"; sourceTree = "<group>"; };
+		1F65A9BE39193AF267694B5914D27A83 /* dsBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.debug.xcconfig; sourceTree = "<group>"; };
+		20A1735C3A61E30EE1BD712799236EC3 /* dsBridge-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-prefix.pch"; sourceTree = "<group>"; };
+		2DC8599F0BF373DE90D5FF4353C9EE3D /* Pods-AR-Board-Tutorial-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AR-Board-Tutorial-acknowledgements.markdown"; sourceTree = "<group>"; };
+		312FD4E58D4A35418756E29D14513740 /* Pods-AR-Board-Tutorial-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AR-Board-Tutorial-frameworks.sh"; sourceTree = "<group>"; };
+		33948EDAFC16B1660CAEF1218543C4B7 /* dsBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.release.xcconfig; sourceTree = "<group>"; };
+		4E6B480DB4ACF13256F13BA38C308214 /* InternalApis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InternalApis.m; path = dsbridge/InternalApis.m; sourceTree = "<group>"; };
+		5747FDC7F73CD8D227A4B35BD53E1D63 /* JSBUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSBUtil.m; path = dsbridge/JSBUtil.m; sourceTree = "<group>"; };
+		594F042554DF4D5BDA3F5C6BAFDA073B /* DWKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWKWebView.h; path = dsbridge/DWKWebView.h; sourceTree = "<group>"; };
+		78C2132BD99D643C35A94EAEB89A6847 /* Pods-AR-Board-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AR-Board-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
+		797D46A7F1534583458B98BF2BB479A7 /* dsBridge */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsBridge; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A41D31011003BC2E38BB946157EF614 /* Pods-AR-Board-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AR-Board-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		8173358C3AC33B762C1ED3FF079F59A1 /* DSCallInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCallInfo.m; path = dsbridge/DSCallInfo.m; sourceTree = "<group>"; };
+		837095129B255695DF45C6FE743AC0E0 /* dsBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsBridge.modulemap; sourceTree = "<group>"; };
+		8C092C1B3C4A2AD84D1C15B04342F3A3 /* Pods-AR-Board-Tutorial */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AR-Board-Tutorial"; path = Pods_AR_Board_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F5B4581EEE102B7FBC2DF175DD1E866 /* DWKWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWKWebView.m; path = dsbridge/DWKWebView.m; sourceTree = "<group>"; };
+		AF537A37EFD55218EB200FF320569C0F /* Pods-AR-Board-Tutorial-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AR-Board-Tutorial-acknowledgements.plist"; sourceTree = "<group>"; };
+		B7BF915FD6670C78DB79E6BBA6634120 /* InternalApis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InternalApis.h; path = dsbridge/InternalApis.h; sourceTree = "<group>"; };
+		C7E0E15BA9C496A06B653582E291C364 /* JSBUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSBUtil.h; path = dsbridge/JSBUtil.h; sourceTree = "<group>"; };
+		D14230E3E057BD052947C8F3AF377FE4 /* Pods-AR-Board-Tutorial-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AR-Board-Tutorial-dummy.m"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D9B939A2766B5607F7152EA5746D7C61 /* dsbridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsbridge.h; path = dsbridge/dsbridge.h; sourceTree = "<group>"; };
+		DA0E33DEAA86CEF1CE67B3E7D6A662A4 /* dsBridge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-umbrella.h"; sourceTree = "<group>"; };
+		E68BD10E654B3E34960703187C442670 /* dsBridge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dsBridge-dummy.m"; sourceTree = "<group>"; };
+		E925B4E1104410BF0512C8FF113827C3 /* Pods-AR-Board-Tutorial-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AR-Board-Tutorial-Info.plist"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BD8FAF68C7EE6EB1079F2B3F39BA9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760277DCD17B87926D31937D97A4DB0A /* Foundation.framework in Frameworks */,
+				C0574129DD4371FA64FE31DE3472340E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA2F35DA9B47071E6D64FFBB16AB0A59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B34A70589B5285D9B233872CED014EA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F80EB13141B44618A28CA0D7CBD4C72 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F174C2ADE819619F5C7DF6D021B3EB8A /* Pods-AR-Board-Tutorial */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		55CEA9B137519C2F0FFAB79FBC25A4C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				797D46A7F1534583458B98BF2BB479A7 /* dsBridge */,
+				8C092C1B3C4A2AD84D1C15B04342F3A3 /* Pods-AR-Board-Tutorial */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6F9764AA9385D45EA8FEF179106C3EE3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				837095129B255695DF45C6FE743AC0E0 /* dsBridge.modulemap */,
+				E68BD10E654B3E34960703187C442670 /* dsBridge-dummy.m */,
+				1EEC987F214E03C49E0909B8B87632C1 /* dsBridge-Info.plist */,
+				20A1735C3A61E30EE1BD712799236EC3 /* dsBridge-prefix.pch */,
+				DA0E33DEAA86CEF1CE67B3E7D6A662A4 /* dsBridge-umbrella.h */,
+				1F65A9BE39193AF267694B5914D27A83 /* dsBridge.debug.xcconfig */,
+				33948EDAFC16B1660CAEF1218543C4B7 /* dsBridge.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/dsBridge";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				F3A831A67550DF90A8D9C6FFCC981DD7 /* Pods */,
+				55CEA9B137519C2F0FFAB79FBC25A4C7 /* Products */,
+				1F80EB13141B44618A28CA0D7CBD4C72 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F174C2ADE819619F5C7DF6D021B3EB8A /* Pods-AR-Board-Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EC0DE9D960EA7A285EC7121431D61 /* Pods-AR-Board-Tutorial.modulemap */,
+				2DC8599F0BF373DE90D5FF4353C9EE3D /* Pods-AR-Board-Tutorial-acknowledgements.markdown */,
+				AF537A37EFD55218EB200FF320569C0F /* Pods-AR-Board-Tutorial-acknowledgements.plist */,
+				D14230E3E057BD052947C8F3AF377FE4 /* Pods-AR-Board-Tutorial-dummy.m */,
+				312FD4E58D4A35418756E29D14513740 /* Pods-AR-Board-Tutorial-frameworks.sh */,
+				E925B4E1104410BF0512C8FF113827C3 /* Pods-AR-Board-Tutorial-Info.plist */,
+				0E5509692AC1BC179879EF5C91CD3DEF /* Pods-AR-Board-Tutorial-umbrella.h */,
+				7A41D31011003BC2E38BB946157EF614 /* Pods-AR-Board-Tutorial.debug.xcconfig */,
+				78C2132BD99D643C35A94EAEB89A6847 /* Pods-AR-Board-Tutorial.release.xcconfig */,
+			);
+			name = "Pods-AR-Board-Tutorial";
+			path = "Target Support Files/Pods-AR-Board-Tutorial";
+			sourceTree = "<group>";
+		};
+		F3A831A67550DF90A8D9C6FFCC981DD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFBA8161878607046F968BB7815D0F1E /* dsBridge */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FFBA8161878607046F968BB7815D0F1E /* dsBridge */ = {
+			isa = PBXGroup;
+			children = (
+				D9B939A2766B5607F7152EA5746D7C61 /* dsbridge.h */,
+				111EF0B80D50CC2FE5362A5DF71824EC /* DSCallInfo.h */,
+				8173358C3AC33B762C1ED3FF079F59A1 /* DSCallInfo.m */,
+				594F042554DF4D5BDA3F5C6BAFDA073B /* DWKWebView.h */,
+				9F5B4581EEE102B7FBC2DF175DD1E866 /* DWKWebView.m */,
+				B7BF915FD6670C78DB79E6BBA6634120 /* InternalApis.h */,
+				4E6B480DB4ACF13256F13BA38C308214 /* InternalApis.m */,
+				C7E0E15BA9C496A06B653582E291C364 /* JSBUtil.h */,
+				5747FDC7F73CD8D227A4B35BD53E1D63 /* JSBUtil.m */,
+				6F9764AA9385D45EA8FEF179106C3EE3 /* Support Files */,
+			);
+			name = dsBridge;
+			path = dsBridge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AAAAD2DE9DA6A81F0BB7BC092882DB94 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AFDB997B9119CB5AF876EED1B62D2EF /* dsbridge.h in Headers */,
+				54397034A0FB68FF428E0F4169E23A7D /* dsBridge-umbrella.h in Headers */,
+				51A7D1ED437C4C91BD96E5245176DB9A /* DSCallInfo.h in Headers */,
+				1CD35EB7AF8717B2936F797A7F4598FE /* DWKWebView.h in Headers */,
+				C88C2A17D04F276B10CE0806EBB137E6 /* InternalApis.h in Headers */,
+				C64A7A369DE079585D6439FBA5174FCE /* JSBUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5A1D92DBBEB8161414F8F2308AA1E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91460D4EA8F6BC550FA112C4ABF8A512 /* Pods-AR-Board-Tutorial-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EAED91B12DBC010508F205B98E9CCCD /* Build configuration list for PBXNativeTarget "dsBridge" */;
+			buildPhases = (
+				AAAAD2DE9DA6A81F0BB7BC092882DB94 /* Headers */,
+				A0F7BDB02090C55577555993C031D557 /* Sources */,
+				7BD8FAF68C7EE6EB1079F2B3F39BA9EC /* Frameworks */,
+				29D9FFFEE18AEFD5EF2A50D23DAE3D1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dsBridge;
+			productName = dsBridge;
+			productReference = 797D46A7F1534583458B98BF2BB479A7 /* dsBridge */;
+			productType = "com.apple.product-type.framework";
+		};
+		66A3B21D4F19F7139DB903697EE70976 /* Pods-AR-Board-Tutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E479FB0B888579FDA4D218000E1BFE46 /* Build configuration list for PBXNativeTarget "Pods-AR-Board-Tutorial" */;
+			buildPhases = (
+				FF5A1D92DBBEB8161414F8F2308AA1E7 /* Headers */,
+				2DA86376AC2E885AC7DA31C419AD500F /* Sources */,
+				EA2F35DA9B47071E6D64FFBB16AB0A59 /* Frameworks */,
+				9F32D376619D25A05242F0928FF4A2CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8FEBC716764E0EC42BC0770B3E4F51D /* PBXTargetDependency */,
+			);
+			name = "Pods-AR-Board-Tutorial";
+			productName = Pods_AR_Board_Tutorial;
+			productReference = 8C092C1B3C4A2AD84D1C15B04342F3A3 /* Pods-AR-Board-Tutorial */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 55CEA9B137519C2F0FFAB79FBC25A4C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */,
+				66A3B21D4F19F7139DB903697EE70976 /* Pods-AR-Board-Tutorial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29D9FFFEE18AEFD5EF2A50D23DAE3D1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F32D376619D25A05242F0928FF4A2CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DA86376AC2E885AC7DA31C419AD500F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B52A12ED26A3ECBA029E445894338EC /* Pods-AR-Board-Tutorial-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F7BDB02090C55577555993C031D557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6C4FE943219AEC34383FD77A6983F61 /* dsBridge-dummy.m in Sources */,
+				1D2912FBCDC5FF3EE06845F125767185 /* DSCallInfo.m in Sources */,
+				02DD422124A7732719E29B2C6DE2E63F /* DWKWebView.m in Sources */,
+				F9D85D50F9B84F504B05EB9F61E88C32 /* InternalApis.m in Sources */,
+				B1DE887D102B552019F5F9BE80E6CE2B /* JSBUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8FEBC716764E0EC42BC0770B3E4F51D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dsBridge;
+			target = 1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */;
+			targetProxy = 943B06AC01BB8FE62368C230FC114017 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C7CA15B9E12865AFF1FF8996EDFF715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F65A9BE39193AF267694B5914D27A83 /* dsBridge.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dsBridge/dsBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
+				PRODUCT_MODULE_NAME = dsBridge;
+				PRODUCT_NAME = dsBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3840E47B350B9735951F980631EE53C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A41D31011003BC2E38BB946157EF614 /* Pods-AR-Board-Tutorial.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C636194F4EB654E009CE64ABEE91D9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33948EDAFC16B1660CAEF1218543C4B7 /* dsBridge.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dsBridge/dsBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
+				PRODUCT_MODULE_NAME = dsBridge;
+				PRODUCT_NAME = dsBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E6C4991DA3A6396E1FC0B53FCBF4E6D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78C2132BD99D643C35A94EAEB89A6847 /* Pods-AR-Board-Tutorial.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EAED91B12DBC010508F205B98E9CCCD /* Build configuration list for PBXNativeTarget "dsBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C7CA15B9E12865AFF1FF8996EDFF715 /* Debug */,
+				6C636194F4EB654E009CE64ABEE91D9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E479FB0B888579FDA4D218000E1BFE46 /* Build configuration list for PBXNativeTarget "Pods-AR-Board-Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3840E47B350B9735951F980631EE53C3 /* Debug */,
+				E6C4991DA3A6396E1FC0B53FCBF4E6D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

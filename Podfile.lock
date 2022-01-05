@@ -1,0 +1,16 @@
+PODS:
+  - dsBridge (3.0.6)
+
+DEPENDENCIES:
+  - dsBridge
+
+SPEC REPOS:
+  trunk:
+    - dsBridge
+
+SPEC CHECKSUMS:
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+
+PODFILE CHECKSUM: 6510b4bfebddb057dcd55495b2098f384bdddb84
+
+COCOAPODS: 1.11.2
