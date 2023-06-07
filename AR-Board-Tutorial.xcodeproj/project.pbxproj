@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,11 @@
 		63A101C826F3294E0024A2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A101C726F3294E0024A2C1 /* Assets.xcassets */; };
 		63A101CB26F3294E0024A2C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A101C926F3294E0024A2C1 /* LaunchScreen.storyboard */; };
 		63A1563B274C88FA00C07876 /* AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A1563A274C88FA00C07876 /* AppID.swift */; };
-		63BA713127858FE900DC8B49 /* ARBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA712F27858FE200DC8B49 /* ARBoard.framework */; platformFilter = ios; };
-		63BA713227858FE900DC8B49 /* ARBoard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA712F27858FE200DC8B49 /* ARBoard.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63E90DDF27683B230046EC57 /* ARBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E90DDE27683B230046EC57 /* ARBaseNavigationController.swift */; };
 		74C782D5EB6145A179E3720F /* Pods_AR_Board_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B404EA02BCBC8D1BB009A2 /* Pods_AR_Board_Tutorial.framework */; };
+		8AB1095B2A26F14C00C1FCBD /* UIView+ARUIToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB109592A26F14C00C1FCBD /* UIView+ARUIToast.m */; };
+		8AE4FF382A3077E9008C72F7 /* ARBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE4FF362A3077E2008C72F7 /* ARBoard.framework */; };
+		8AE4FF392A3077E9008C72F7 /* ARBoard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE4FF362A3077E2008C72F7 /* ARBoard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				63BA713227858FE900DC8B49 /* ARBoard.framework in Embed Frameworks */,
+				8AE4FF392A3077E9008C72F7 /* ARBoard.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01ADBCA25995B7FCA06CC2E2 /* Pods-AR-Board-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Board-Tutorial.debug.xcconfig"; path = "../ArWhiteBoard-iOS/Pods/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		01ADBCA25995B7FCA06CC2E2 /* Pods-AR-Board-Tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Board-Tutorial.debug.xcconfig"; path = "../ARBoard-iOS/Pods/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		29B404EA02BCBC8D1BB009A2 /* Pods_AR_Board_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Board_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6315AE83276C8DBB00AB1497 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		63413F56272A8A050056CA92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,9 +57,12 @@
 		63A101CA26F3294E0024A2C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63A101CC26F3294E0024A2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A1563A274C88FA00C07876 /* AppID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppID.swift; sourceTree = "<group>"; };
-		63BA712F27858FE200DC8B49 /* ARBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARBoard.framework; sourceTree = "<group>"; };
 		63E90DDE27683B230046EC57 /* ARBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARBaseNavigationController.swift; sourceTree = "<group>"; };
-		B939D32D82D4CAD78DAE16C1 /* Pods-AR-Board-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Board-Tutorial.release.xcconfig"; path = "../ArWhiteBoard-iOS/Pods/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
+		8AB109582A26F14B00C1FCBD /* AR-Board-Tutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AR-Board-Tutorial-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AB109592A26F14C00C1FCBD /* UIView+ARUIToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ARUIToast.m"; sourceTree = "<group>"; };
+		8AB1095A2A26F14C00C1FCBD /* UIView+ARUIToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ARUIToast.h"; sourceTree = "<group>"; };
+		8AE4FF362A3077E2008C72F7 /* ARBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARBoard.framework; sourceTree = "<group>"; };
+		B939D32D82D4CAD78DAE16C1 /* Pods-AR-Board-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Board-Tutorial.release.xcconfig"; path = "../ARBoard-iOS/Pods/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63BA713127858FE900DC8B49 /* ARBoard.framework in Frameworks */,
+				8AE4FF382A3077E9008C72F7 /* ARBoard.framework in Frameworks */,
 				74C782D5EB6145A179E3720F /* Pods_AR_Board_Tutorial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,7 +123,7 @@
 		63A101D626F329C00024A2C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				63BA712F27858FE200DC8B49 /* ARBoard.framework */,
+				8AE4FF362A3077E2008C72F7 /* ARBoard.framework */,
 				29B404EA02BCBC8D1BB009A2 /* Pods_AR_Board_Tutorial.framework */,
 			);
 			name = Frameworks;
@@ -138,9 +142,12 @@
 		63E90DE127683C540046EC57 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8AB1095A2A26F14C00C1FCBD /* UIView+ARUIToast.h */,
+				8AB109592A26F14C00C1FCBD /* UIView+ARUIToast.m */,
 				63A1563A274C88FA00C07876 /* AppID.swift */,
 				63413F6B272A96A20056CA92 /* ARExtension.swift */,
 				6315AE83276C8DBB00AB1497 /* Logger.swift */,
+				8AB109582A26F14B00C1FCBD /* AR-Board-Tutorial-Bridging-Header.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -168,7 +175,7 @@
 				63A101B826F329450024A2C1 /* Frameworks */,
 				63A101B926F329450024A2C1 /* Resources */,
 				6370486A26F5CC8B001C6401 /* Embed Frameworks */,
-				09B375BD1BE88DABF8C5C0D2 /* [CP] Embed Pods Frameworks */,
+				A9376D3F23F2DFBD675E67A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +197,7 @@
 				TargetAttributes = {
 					63A101BA26F329450024A2C1 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -225,7 +233,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09B375BD1BE88DABF8C5C0D2 /* [CP] Embed Pods Frameworks */ = {
+		A9376D3F23F2DFBD675E67A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63413F6C272A96A20056CA92 /* ARExtension.swift in Sources */,
+				8AB1095B2A26F14C00C1FCBD /* UIView+ARUIToast.m in Sources */,
 				6341402B272F921D0056CA92 /* ARBrushTypeViewController.swift in Sources */,
 				63413F57272A8A050056CA92 /* ViewController.swift in Sources */,
 				63A101BF26F329450024A2C1 /* AppDelegate.swift in Sources */,
@@ -428,6 +437,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -440,8 +451,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anyrtc.AR-Board-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AR-Board-Tutorial/Common/AR-Board-Tutorial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -453,6 +468,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -465,8 +482,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anyrtc.AR-Board-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AR-Board-Tutorial/Common/AR-Board-Tutorial-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

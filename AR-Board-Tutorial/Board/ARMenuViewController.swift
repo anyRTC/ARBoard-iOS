@@ -101,14 +101,15 @@ class ARMenuViewController: UIViewController {
             MenuItem(name: "重做"),
             MenuItem(name: "清空涂鸦"),
             MenuItem(name: "清空涂鸦和背景"),
-            MenuItem(name: "重置")
+            MenuItem(name: "重置"),
+            MenuItem(name: "添加背景")
         ]),
         MenuSection(name: "白板相关", rows: [
             MenuItem(name: "新增"),
             MenuItem(name: "删除"),
             MenuItem(name: "上一页"),
             MenuItem(name: "下一页"),
-            MenuItem(name: "白板缩放", progress: Float(boardKit.getBoardScale())/200.0),
+            MenuItem(name: "白板缩放", progress: Float(boardKit.getBoardScale())/300.0),
             MenuItem(name: "背景颜色", color: boardKit.getBackgroundColor())
         ])
     ]
@@ -134,6 +135,8 @@ class ARMenuViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(boardBrushChange), name: UIResponder.boardNotificationBrushChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(boardColorChange), name: UIResponder.boardNotificationColorChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(boardScaleChange), name: UIResponder.boardNotificationScaleChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(boardBackgroundColorChange), name: UIResponder.boardNotificationBackgroundColorChange, object: nil)
     }
     
     deinit {
@@ -152,17 +155,27 @@ class ARMenuViewController: UIViewController {
         let colorType: NSInteger = nofi.userInfo!["type"] as! NSInteger
         if colorType == 2 {
             /// brushColor
-            menus[0].rows[2].color = nofi.userInfo!["color"] as! UIColor
+            menus.first?.rows[2].color = nofi.userInfo!["color"] as! UIColor
             tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .automatic)
         } else if colorType == 3 {
             /// textColor
-            menus[0].rows[3].color = nofi.userInfo!["color"] as! UIColor
+            menus.first?.rows[3].color = nofi.userInfo!["color"] as! UIColor
             tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .automatic)
         } else {
             /// backGround
-            menus[1].rows[5].color = nofi.userInfo!["color"] as! UIColor
+            menus.last?.rows[5].color = nofi.userInfo!["color"] as! UIColor
             tableView.reloadRows(at: [IndexPath(row: 5, section: 1)], with: .automatic)
         }
+    }
+    
+    @objc func boardScaleChange(nofi: Notification) {
+        menus[1].rows[4].progress = Float(boardKit.getBoardScale())/300.0
+        tableView.reloadRows(at: [IndexPath(row: 4, section: 1)], with: .none)
+    }
+    
+    @objc func boardBackgroundColorChange(nofi: Notification) {
+        menus[1].rows[5].color = boardKit.getBackgroundColor()
+        tableView.reloadRows(at: [IndexPath(row: 5, section: 1)], with: .automatic)
     }
     
     @objc func sliderValueChange(slider: UISlider) {
@@ -178,7 +191,7 @@ class ARMenuViewController: UIViewController {
             menus[0].rows[5].progress = slider.value
         } else {
             /// 白板缩放
-            boardKit.setBoardScale(UInt32(slider.value * 200))
+            boardKit.setBoardScale(UInt32(slider.value * 300))
             menus[1].rows[4].progress = slider.value
         }
     }
@@ -324,6 +337,29 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
             } else if indexPath.row == 10 {
                 /// 重置
                 boardKit.reset()
+            } else if indexPath.row == 11 {
+                /// 设置背景图片
+                var inputText: UITextField = UITextField();
+                let alertVc = UIAlertController.init(title: "背景图片", message: nil, preferredStyle: .alert)
+                let ok = UIAlertAction.init(title: "确定", style:.default) { [weak self] (action:UIAlertAction) ->() in
+                    guard let self = self, let url = inputText.text else { return }
+                    if(url.contains("https://")){
+                        boardKit.setBackgroundImage(url, fillMode: .contain)
+                    } else {
+                        self.view.makeToast("请输入合法的https协议的url", duration: 1.0, position: ARUICSToastPositionCenter)
+                    }
+                }
+                
+                let cancel = UIAlertAction.init(title: "取消", style:.cancel)
+                
+                alertVc.addAction(ok)
+                alertVc.addAction(cancel)
+                alertVc.addTextField { (textField) in
+                    inputText = textField
+                    inputText.placeholder = "请输入背景URL"
+                    inputText.clearButtonMode = .whileEditing
+                }
+                self.present(alertVc, animated: true, completion: nil)
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {

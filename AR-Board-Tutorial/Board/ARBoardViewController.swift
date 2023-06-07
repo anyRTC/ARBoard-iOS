@@ -24,29 +24,31 @@ class ARBoardViewController: UIViewController {
         menuVc?.boardVc = self
         return menuVc!
     }()
+    private var boardView: ARBoardView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        edgesForExtendedLayout = []
         initializeUI()
         initializeBoard()
     }
     
     func initializeBoard() {
-        boardKit = ARBoardKit(engineWithAppId: AppID, delegate: self)
-
-        //let dic: NSDictionary = ["ServerAdd": "pro.wbgw.agrtc.cn", "Port": 443]
-        //boardKit.setParameters(dic as! [AnyHashable: Any])
-        let boardView = boardKit.getBoardRenderView()
-        boardView.frame = view.bounds
-        view.insertSubview(boardView, at: 0)
-
-        boardKit.joinChannel(byToken: nil, channelId: channelId, uid: localUid) { [weak self] _, _ in
-            boardKit.setDrawEnable(true)
-            self?.isJoin = true
-            print("joinChannel")
-        }
+        let authParam = ARBoardAuthParam()
+        authParam.appId = AppID
+        authParam.uid = localUid
+    
+        let baseParam = ARBoardBaseParam()
+        baseParam.authConfig.drawEnable = false
+        baseParam.config.ratio = "3:4"
+        baseParam.config.toolType = .none
+        
+        baseParam.styleConfig.brushColor = UIColor.black
+        baseParam.styleConfig.brushThin = 2
+        
+        boardKit = ARBoardKit(authParam: authParam, roomId: channelId, boardParam: baseParam, delegate: self)
     }
     
     func initializeUI() {
@@ -106,10 +108,18 @@ class ARBoardViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(createImage(UIColor(hexString: "#FFFFFF")), for: .any, barMetrics: .default)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        boardView = boardKit.getBoardRenderView()
+        boardView.frame = view.bounds
+        view.insertSubview(boardView, at: 0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
+    }
+    
+    deinit {
+        print("boardVc deinit")
     }
 }
 
@@ -117,6 +127,13 @@ extension ARBoardViewController: ARBoardDelegate {
     func board(_ boardKit: ARBoardKit, didOccurError errorCode: ARBoardErrorCode) {
         /// 发生错误回调
         Logger.log(message: "didOccurError errorCode = \(errorCode.rawValue)", level: .error)
+    }
+    
+    func didHistoryDataSyncCompleted(_ boardKit: ARBoardKit) {
+        /// 历史数据同步完成回调
+        boardKit.setDrawEnable(true)
+        isJoin = true
+        Logger.log(message: "didHistoryDataSyncCompleted", level: .error)
     }
     
     func board(_ boardKit: ARBoardKit, addBoard boardIds: [Any], fileId: String) {
@@ -134,9 +151,10 @@ extension ARBoardViewController: ARBoardDelegate {
         Logger.log(message: "gotoBoard fileId = \(fileId) boardId = \(boardId)", level: .info)
     }
     
-    func board(_ boardKit: ARBoardKit, scaleChannge boardId: String, scale: CGFloat) {
+    func board(_ boardKit: ARBoardKit, scaleChange boardId: String, scale: CGFloat) {
         /// 白板缩放的回调
         Logger.log(message: "scaleChannge boardId = \(boardId) scale = \(scale)", level: .info)
+        NotificationCenter.default.post(name: UIResponder.boardNotificationScaleChange, object: nil, userInfo: nil)
     }
     
     func board(_ boardKit: ARBoardKit, connectionChangedTo state: ARBoardConnectionStateType, reason: ARBoardConnectionChangedReason) {
@@ -152,5 +170,26 @@ extension ARBoardViewController: ARBoardDelegate {
     func board(_ boardKit: ARBoardKit, redoStateChange enable: Bool) {
         /// 当前白板页是否可重做
         Logger.log(message: "redoStateChange enable = \(enable)", level: .info)
+    }
+    
+    func boardReset(_ boardKit: ARBoardKit) {
+        /// 重置白板（删除所有白板页和涂鸦）
+        Logger.log(message: "boardReset", level: .info)
+    }
+    
+    func board(_ boardKit: ARBoardKit, clear fileId: String, boardId: String, clearBackground isClearBackground: Bool) {
+        /// 清空白板回调
+        Logger.log(message: "clear fileId = \(fileId) boardId = \(boardId) isClearBackground = \(isClearBackground)", level: .info)
+    }
+    
+    func board(_ boardKit: ARBoardKit, imageStatusChange status: ARBoardImageStatus, fileId: String, boardId: String, data: ARBoardImageData) {
+        /// 背景图片加载状态变化的回调
+        Logger.log(message: "imageStatusChange status = \(status.rawValue) fileId = \(fileId) boardId = \(boardId)", level: .info)
+    }
+    
+    func board(_ boardKit: ARBoardKit, backgroundColorChange color: UIColor) {
+        /// 背景颜色改变的回调
+        Logger.log(message: "backgroundColorChange color = \(color)", level: .info)
+        NotificationCenter.default.post(name: UIResponder.boardNotificationBackgroundColorChange, object: nil, userInfo: nil)
     }
 }

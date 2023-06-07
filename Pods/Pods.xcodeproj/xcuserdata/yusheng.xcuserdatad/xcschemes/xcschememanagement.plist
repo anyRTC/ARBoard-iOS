@@ -4,19 +4,18 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AR-Board-Tutorial.xcscheme_^#shared#^_</key>
+		<key>Pods-AR-Board-Tutorial.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>dsBridge.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>63A101BA26F329450024A2C1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

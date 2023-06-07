@@ -10,78 +10,55 @@
 
 /** 错误码 */
 typedef NS_ENUM(NSInteger, ARBoardErrorCode) {
+    /**
+     * 参数不合法。
+     */
+    ARBoardErrorCodeInvalid_Params = 1000,
     
     /**
-     0: APPID 不合法
+     * 非法操作。
+     *
+     * 白板操作相关的错误码
+     * 包含：
+     * - 添加白板错误
+     * - 删除白板错误
+     * - 重置白板
+     * - 清除白板
      */
-    ARBoardErrorCodeAppid_Invalid = 0,
+    ARBoardErrorCodeInvalid_Operation = 1001,
     
     /**
-     1: 未登录或者重连过程中
+     * 初始化失败。
+     *
+     * 一般是因为缺少参数或参数不合法
      */
-    ARBoardErrorCodeAuthentication_Failed = 1,
+    ARBoardErrorCodeInit_Error = 2000,
     
     /**
-     2: 获取不到网关地址
+     * 服务鉴权失败。
+     * 根据 errorMessage 检查是否开通服务，是否被禁用
      */
-    ARBoardErrorCodeNoGetGateWay = 2,
+    ARBoardErrorCodeAuth_Failed = 2001,
     
     /**
-     3: 频道被禁用
+     * 鉴权超时。
      */
-    ARBoardErrorCodeChannel_Banned = 3,
+    ARBoardErrorCodeAuth_TimeOut = 2002,
     
     /**
-     4: 开发者信息不合法
-     */
-    ARBoardErrorCodeDeveloper_Invalid = 4,
+      * 历史数据同步失败。
+      */
+    ARBoardErrorCodeHistory_Sync_Failed = 2003,
     
     /**
-     5: 网关异常
+     * 无效背景图片资源。
      */
-    ARBoardErrorCodeGateWayError = 5,
+    ARBoardErrorCodeInvalid_Image_Assets = 3000,
     
     /**
-     6: 非法操作。
-     
-     通常是因为在当前网络状态不能进行该操作。
+     * 请求图片超时。
      */
-    ARBoardErrorCodeInvalid_Operation = 6,
-    
-    /**
-     7: 非法参数。
-     */
-    ARBoardErrorCodeInvalid_Params = 7,
-    
-    /**
-     8: IP 地址被禁用
-     */
-    ARBoardErrorCodeIP_Banned = 8,
-    
-    /**
-     9: 缺少参数
-     */
-    ARBoardErrorCodeMissing_Parameter = 9,
-    
-    /**
-     10: 未检测到服务
-     */
-    ARBoardErrorCodeServerNotOpen = 10,
-    
-    /**
-     11: TOKEN 过期
-     */
-    ARBoardErrorCodeToken_Expired = 11,
-    
-    /**
-     12: TOKEN 验证失败
-     */
-    ARBoardErrorCodeToken_Invalid = 12,
-    
-    /**
-     13: 当前用户被踢出。
-     */
-    ARBoardErrorCodeUid_Banned = 13
+    ARBoardErrorCodeBackground_TimeOut = 3001,
 };
 
 /** 画笔类型 */
@@ -186,6 +163,70 @@ typedef NS_ENUM(NSUInteger, ARBoardConnectionChangedReason) {
      5: 获取不到网关地址
      */
     ARBoardConnectionChangedGateWay = 5
+};
+
+/** 字体样式 */
+typedef NS_ENUM(NSUInteger, ARBoardTextStyle) {
+    /**
+     0: 默认
+     */
+    ARBoardTextStyleNomal = 0,
+    /**
+     1: 粗体
+     */
+    ARBoardTextStyleBold = 1,
+    /**
+     2: 斜体
+     */
+    ARBoardTextStyleItalic = 2,
+    /**
+     2: 粗斜体
+     */
+    ARBoardTextStyleBoldItalic = 3,
+};
+
+/** 背景显示模式 */
+typedef NS_ENUM(NSUInteger, ARBoardFillMode) {
+    /**
+     0: 默认
+     */
+    ARBoardFillModeContain = 0,
+    /**
+     1: 覆盖
+     */
+    ARBoardFillModeCover = 1,
+    /**
+     2: 填充
+     */
+    ARBoardFillModeFill = 2
+};
+
+/** 背景图片加载状态 */
+typedef NS_ENUM(NSUInteger, ARBoardImageStatus) {
+    /**
+     1: 图片正在加载
+     */
+    ARBoardImageStatusLoading = 1,
+    /**
+     2: 图片加载完成
+     */
+    ARBoardImageStatusDone = 2,
+    /**
+     3: 图片加载中断
+     */
+    ARBoardImageStatusAbort = 3,
+    /**
+     4: 图片加载错误。监听到此错误码时，需要重新调用接口设置
+     */
+    ARBoardImageStatusError = 4,
+    /**
+     5: 图片加载超时。监听到此错误码时，需要重新调用接口设置
+     */
+    ARBoardImageStatusTimeOut = 5,
+    /**
+     6: 图片取消加载
+     */
+    ARBoardImageStatusCancel = 6,
 };
 
 #endif /* ARBoardEnumerates_h */

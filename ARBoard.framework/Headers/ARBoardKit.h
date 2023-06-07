@@ -25,15 +25,37 @@ NS_ASSUME_NONNULL_BEGIN
 
 该方法初始化一个 ARBoardKit 对象。使用 ARBoardKit，必须先调用该接口进行初始化。
  
-@param appId    anyrtc云平台 为 App 开发者签发的 App ID。每个项目都应该有一个独一无二的 App ID。如果你的开发包里没有 App ID，请从ar云平台官网申请一个新的 App ID。在你调用 joinChannelByToken加入anyRTC云平台的全球网络实现互动白板时需要：
+@param authParam 授权配置， anyRTC云平台 为 App 开发者签发的 App ID。每个项目都应该有一个独一无二的 App ID。如果你的开发包里没有 App ID，请从ar云平台官网申请一个新的 App ID。
  
  * 用 App ID 标示你的项目和所属组织
- * 用一个独一无二的频道名称
-@param delegate ARBoardDelegate.
+ * uid 为自身业务 id,可以标识业务中的用户
+ * token:开启权限认证功能方可使用，使用时需要先进行服务对接生成token，然后向自身业务请求该服务生成的token;如果未开启权限认证功能，该字段无需使用
+
+ 
+ @param roomId 标识通话频道的字符串，长度在 64 字节以内的字符串。
+ 以下为支持的字符集范围（共 89 个字符）:
+
+ * 26 个小写英文字母 a-z
+ * 26 个大写英文字母 A-Z
+ * 10 个数字 0-9
+ * 空格
+ * "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~", ","
+
+ @param baseParam 白板配置项.
+ 
+ @param delegate ARBoardDelegate.
 
 @return 一个 ARBoardKit 实例对象
 */
-- (instancetype _Nonnull)initEngineWithAppId:(NSString *_Nonnull)appId delegate:(id<ARBoardDelegate> _Nullable)delegate;
+- (instancetype)initWithAuthParam:(ARBoardAuthParam *)authParam roomId:(NSString *_Nonnull)roomId boardParam:(ARBoardBaseParam *)baseParam delegate:(id<ARBoardDelegate> _Nullable)delegate;
+
+/** 释放白板
+ 
+ * 调用反初始化接口后会释放内部资源，白板功能将失效
+ 
+ @return 0方法调用成功，<0方法调用失败
+ */
+- (int)destory;
 
 /** 查询 SDK 版本号
 
@@ -48,61 +70,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - 核心方法
 
-/**-----------------------------------------------------------------------------
-* @name 核心方法
-* -----------------------------------------------------------------------------
-*/
-
-/** 加入白板频道
-
- @param token 动态密钥
-
- * 安全要求不高: 将值设为 nil
- * 安全要求高: 将值设置为 Token。如果你已经启用了 App Certificate，请务必使用 Token。
- * 请务必确保用于生成 Token 的 App ID 和 sharedEngineWithappId 方法初始化引擎时用的是同一个 App ID。
-
- @param channelId 标识通话频道的字符串，长度在 64 字节以内的字符串。
- 以下为支持的字符集范围（共 89 个字符）:
-
- * 26 个小写英文字母 a-z
- * 26 个大写英文字母 A-Z
- * 10 个数字 0-9
- * 空格
- * "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~", ","
-
-@param uid 用户 ID，建议设置长度1~48，确保uid符合规则，并保证唯一性。
- 
- * 26 个小写英文字母 a-z
- * 26 个大写英文字母 A-Z
- * 10 个数字 0-9
-@param joinSuccessBlock 成功加入频道回调。
-
-@return 0方法调用成功，<0方法调用失败
-*/
-- (int)joinChannelByToken:(NSString * _Nullable)token
-                channelId:(NSString * _Nonnull)channelId
-                      uid:(NSString * _Nonnull)uid
-              joinSuccess:(void(^ _Nullable)(NSString * _Nonnull channel, NSString * _Nonnull uid))joinSuccessBlock;
-
 /** 获取白板渲染视图
 
  @return 白板视图
  */
 - (ARBoardView *)getBoardRenderView;
-
-/** 离开频道
-
- @return 0方法调用成功，<0方法调用失败
- */
-- (int)leaveChannel;
-
-/** 通过配置 SDK 提供技术预览或特别定制功能
-
- @param options 字典格式的 SDK 选项
- 
- @return 0方法调用成功，<0方法调用失败
- */
-- (int)setParameters:(NSDictionary * _Nonnull)options;
 
 //MARK: - 涂鸦相关接口
 
@@ -150,6 +122,28 @@ NS_ASSUME_NONNULL_BEGIN
  @return 全局背景色
 */
 - (UIColor *)getGlobalBackgroundColor;
+
+/** 设置当前白板页的背景图片 url
+ 
+ @param url 背景图片的url 或者 base64 的图片地址，如果是线上的url 请务必允许跨域访问
+ @param mode 显示模式，详见 ARBoardFillMode
+ 
+*/
+- (void)setBackgroundImage:(NSString *_Nonnull)url fillMode:(ARBoardFillMode)mode;
+
+/** 获取当前白板页的背景图片 url
+ 
+ @return 白板页的背景图片
+ 
+*/
+- (NSString *)getBackgroundImage;
+
+/** 获取当前白板页的背景图片显示模式
+ 
+ @return 显示模式
+ 
+*/
+- (ARBoardFillMode)getBackgroundImageFillMode;
 
 /** 设置画笔类型
 

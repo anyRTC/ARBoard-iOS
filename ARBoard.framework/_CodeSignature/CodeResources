@@ -4,60 +4,57 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ArWhiteBoard@latest.js</key>
-		<data>
-		NDmtmFtNO1r+69tnd8eaEYw7h6A=
-		</data>
 		<key>Headers/ARBoard.h</key>
 		<data>
 		5lMzU+WUN4ttW9XumX9m8ev7mU0=
 		</data>
 		<key>Headers/ARBoardDelegate.h</key>
 		<data>
-		lDfcReK4W5fAW9iqLSVWo7/5O4s=
+		IDlKlj5b8irrHIqEL3u9rKO5Hww=
 		</data>
 		<key>Headers/ARBoardEnumerates.h</key>
 		<data>
-		y36o5/Q9CpCpvxHYhW2/1nGjQQQ=
+		3OItbFg6TNATx1qGuHqJNmEivCs=
 		</data>
 		<key>Headers/ARBoardKit.h</key>
 		<data>
-		5qyRlxvbdBcuX5MxHxpqn3r77qI=
+		mLCkjKAys8jbVwM0wAfp7Llc4x0=
 		</data>
 		<key>Headers/ARBoardObjects.h</key>
 		<data>
-		heF/wkrXAusTPIEkDhkAAViDnK8=
+		V9HiXVDKgv3UzBk99QCYfzKWCP8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		U5rYtotTRPrz+vwMC+ghAjbRfPA=
+		jkdSQ0+HUnZxSqHpscTwkV9BEyM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		cwys4Skec4ZKnG3zsCF/PYozhqQ=
 		</data>
+		<key>ar-whiteboard.umd.js</key>
+		<data>
+		V1QPDeaqybmk5WDQleg+T85kDJg=
+		</data>
 		<key>ar_board.html</key>
 		<data>
-		l9GK9i8tYqUv/6fhyZwfu9q4JLk=
+		4GCO9Af1pQ6KntFThiK8XoqqFp4=
+		</data>
+		<key>board.css</key>
+		<data>
+		cJexNGqmTRPHRaY3wgfMFVsRyTU=
 		</data>
 		<key>dsbridge.js</key>
 		<data>
 		bCo6zhBdSNkBCF3IH9IcY9gsZfo=
 		</data>
+		<key>vconsole.min.js</key>
+		<data>
+		t9/gI/E/szWRgU2OMjuk0hVUnzU=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>ArWhiteBoard@latest.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NDmtmFtNO1r+69tnd8eaEYw7h6A=
-			</data>
-			<key>hash2</key>
-			<data>
-			Fr22bY98J/kRq0nGHz88PHAeO0LTTODoDMlF68oKXnc=
-			</data>
-		</dict>
 		<key>Headers/ARBoard.h</key>
 		<dict>
 			<key>hash</key>
@@ -73,44 +70,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lDfcReK4W5fAW9iqLSVWo7/5O4s=
+			IDlKlj5b8irrHIqEL3u9rKO5Hww=
 			</data>
 			<key>hash2</key>
 			<data>
-			A6JDpjcTMlN7dio9zcHCf1H0QX8FDD8OBfOlIP0ggWA=
+			LiO1xq2xkic/9JeWtwylgLNl9o8XelDSKiHERhv0zpA=
 			</data>
 		</dict>
 		<key>Headers/ARBoardEnumerates.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y36o5/Q9CpCpvxHYhW2/1nGjQQQ=
+			3OItbFg6TNATx1qGuHqJNmEivCs=
 			</data>
 			<key>hash2</key>
 			<data>
-			5hLOXPoWLy9nzGaD2QvOd1TClfPMsDJfqG31My2d03g=
+			d+CDDG1ZGFHq/bMzn7duzqFRdk2hM8gMxtNI0BUr1SY=
 			</data>
 		</dict>
 		<key>Headers/ARBoardKit.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5qyRlxvbdBcuX5MxHxpqn3r77qI=
+			mLCkjKAys8jbVwM0wAfp7Llc4x0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5+yxdIkW+Ji2cMuNWCdPjzgOpLqytuJp5xooyX8Rbmw=
+			rcQ+IcK8LM1UOXZNT7t1i7JuSIBuCNwu8Q5lyLV2Y+s=
 			</data>
 		</dict>
 		<key>Headers/ARBoardObjects.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			heF/wkrXAusTPIEkDhkAAViDnK8=
+			V9HiXVDKgv3UzBk99QCYfzKWCP8=
 			</data>
 			<key>hash2</key>
 			<data>
-			SjRY+35860dZTYQFCNpvSgDU1anp19Km85H5ORYXR0w=
+			CC5Ok6XJlN1xm+BgpsCITVcwP2fRp7SEkHy2U0EP+nk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -124,15 +121,37 @@
 			uHDyAJhUtN0WRpFk3nheZY9SHyS3qb9nMcJZWN3+i68=
 			</data>
 		</dict>
+		<key>ar-whiteboard.umd.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			V1QPDeaqybmk5WDQleg+T85kDJg=
+			</data>
+			<key>hash2</key>
+			<data>
+			nStQKYeXaqupWO2JTDmn6PXrvJvGKo2mhdvKOHJzUWQ=
+			</data>
+		</dict>
 		<key>ar_board.html</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l9GK9i8tYqUv/6fhyZwfu9q4JLk=
+			4GCO9Af1pQ6KntFThiK8XoqqFp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2YXQjzlCeoT3JLYdIMEMTQrew5zP/5+hCgybDpEC5pA=
+			HtLdt2OTWJ8gCc7pSHlbpzcs3etVWvkexKu4kiAcCj0=
+			</data>
+		</dict>
+		<key>board.css</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cJexNGqmTRPHRaY3wgfMFVsRyTU=
+			</data>
+			<key>hash2</key>
+			<data>
+			fvznt7AhDnjosh5UMGRIBNiqJ9PWCLvSzoY6w5rKS+A=
 			</data>
 		</dict>
 		<key>dsbridge.js</key>
@@ -144,6 +163,17 @@
 			<key>hash2</key>
 			<data>
 			eAjc9XDfoHZcsk2OuUIUC5FReEWYirI2y/a+qjZhZn0=
+			</data>
+		</dict>
+		<key>vconsole.min.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			t9/gI/E/szWRgU2OMjuk0hVUnzU=
+			</data>
+			<key>hash2</key>
+			<data>
+			BswUXKDjmaGUCYo34wR4Xw4hrXmE7YepJb5SAX1rewI=
 			</data>
 		</dict>
 	</dict>

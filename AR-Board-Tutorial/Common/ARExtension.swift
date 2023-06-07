@@ -863,6 +863,8 @@ extension UITextField {
 extension UIResponder {
     static let boardNotificationBrushChange = Notification.Name(rawValue: "boardNotificationBrushChange")
     static let boardNotificationColorChange = Notification.Name(rawValue: "boardNotificationColorChange")
+    static let boardNotificationScaleChange = Notification.Name(rawValue: "boardNotificationScaleChange")
+    static let boardNotificationBackgroundColorChange = Notification.Name(rawValue: "boardNotificationBackgroundColorChange")
 }
 
 extension UserDefaults {
