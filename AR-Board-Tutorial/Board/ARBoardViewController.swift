@@ -8,6 +8,7 @@
 import ARBoard
 import UIKit
 import WebKit
+import SnapKit
 
 var boardKit: ARBoardKit!
 
@@ -31,8 +32,8 @@ class ARBoardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         edgesForExtendedLayout = []
+        (UIApplication.shared.delegate as! AppDelegate).allowRotation = true
         initializeUI()
-        initializeBoard()
     }
     
     func initializeBoard() {
@@ -42,13 +43,20 @@ class ARBoardViewController: UIViewController {
     
         let baseParam = ARBoardBaseParam()
         baseParam.authConfig.drawEnable = false
-        baseParam.config.ratio = "3:4"
+        baseParam.config.ratio = "16:9"
         baseParam.config.toolType = .none
         
         baseParam.styleConfig.brushColor = UIColor.black
         baseParam.styleConfig.brushThin = 2
         
         boardKit = ARBoardKit(authParam: authParam, roomId: channelId, boardParam: baseParam, delegate: self)
+        
+        boardView = boardKit.getBoardRenderView()
+        
+        view.insertSubview(boardView, at: 0)
+        boardView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     func initializeUI() {
@@ -58,29 +66,28 @@ class ARBoardViewController: UIViewController {
         leftButton.setTitleColor(UIColor(hexString: "#294BFF"), for: .normal)
         leftButton.titleLabel?.font = UIFont(name: PingFang, size: 16)
         leftButton.addTarget(self, action: #selector(didClickMenu), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: leftButton)
         
         let rightButton = UIButton(type: .custom)
         rightButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         rightButton.backgroundColor = UIColor.clear
         rightButton.setImage(#imageLiteral(resourceName: "icon_exit"), for: .normal)
         rightButton.addTarget(self, action: #selector(exitBoardRoom), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
     
     @objc func didClickMenu() {
         view.endEditing(true)
         
         if isJoin {
-            menuVc.view.frame = CGRect(x: isMenuOn ? 0 : -288, y: 0, width: ARScreenWidth, height: ARScreenHeight - (isFullScreen() ? 88 : 64))
             isMenuOn.toggle()
             if isMenuOn {
                 view.addSubview(menuVc.view)
                 addChild(menuVc)
             }
             
-            UIView.animate(withDuration: 0.2) {
-                self.menuVc.view.x = self.isMenuOn ? 0 : -288
+            UIView.animate(withDuration: 0.5) {
+                self.menuVc.view.width = self.isMenuOn ? ARScreenWidth : ARScreenWidth + 320
             } completion: { _ in
                 if !self.isMenuOn {
                     self.menuVc.view.removeFromSuperview()
@@ -88,19 +95,24 @@ class ARBoardViewController: UIViewController {
                 }
             }
         } else {
-            print("Join Channel first")
+            view.makeToast("Join Channel first", duration: 1.0, position: ARUICSToastPositionCenter)
         }
     }
     
     @objc func exitBoardRoom() {
         ARAlertActionSheet.showAlert(titleStr: "退出房间", msgStr: nil, currentVC: self, cancelHandler: nil, otherBtns: ["确认"]) { _ in
+            (UIApplication.shared.delegate as! AppDelegate).allowRotation = false
             boardKit = nil
             if self.isMenuOn {
                 self.menuVc.view.removeFromSuperview()
                 self.menuVc.removeFromParent()
             }
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
+    }
+    
+    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        initializeBoard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,10 +120,6 @@ class ARBoardViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(createImage(UIColor(hexString: "#FFFFFF")), for: .any, barMetrics: .default)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
-        
-        boardView = boardKit.getBoardRenderView()
-        boardView.frame = view.bounds
-        view.insertSubview(boardView, at: 0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -191,5 +199,10 @@ extension ARBoardViewController: ARBoardDelegate {
         /// 背景颜色改变的回调
         Logger.log(message: "backgroundColorChange color = \(color)", level: .info)
         NotificationCenter.default.post(name: UIResponder.boardNotificationBackgroundColorChange, object: nil, userInfo: nil)
+    }
+    
+    func board(_ boardKit: ARBoardKit, ratioChange boardId: String, ratio: String) {
+        /// 白板宽高比例回调
+        Logger.log(message: "ratioChange boardId = \(boardId) \(ratio)", level: .info)
     }
 }

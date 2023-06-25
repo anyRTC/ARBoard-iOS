@@ -123,6 +123,14 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (void)board:(ARBoardKit *_Nonnull)boardKit imageStatusChange:(ARBoardImageStatus)status fileId:(NSString *)fileId boardId:(NSString *)boardId data:(ARBoardImageData *)data;
 
+/** 白板宽高比改变的回调
+
+@param boardKit   ARBoardKit对象
+@param boardId 白板页 ID
+@param ratio 宽高比
+*/
+- (void)board:(ARBoardKit *_Nonnull)boardKit ratioChange:(NSString *)boardId ratio:(NSString *)ratio;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -37,6 +37,7 @@ class MenuItem: NSObject {
     var toolType: ARBoardToolType = .arrow
     /// 类型
     var menuType: ARMenuType = .label
+    var selector: Selector?
     var identifier: String = ""
     
     internal init(name: String) {
@@ -63,10 +64,11 @@ class MenuItem: NSObject {
         self.identifier = "ARBoard_BrushType"
     }
     
-    init(name: String, progress: Float) {
+    init(name: String, progress: Float, sel: Selector) {
         self.name = name
         self.progress = progress
         self.menuType = .slider
+        self.selector = sel
     }
 }
 
@@ -95,8 +97,8 @@ class ARMenuViewController: UIViewController {
             MenuItem(name: "选择工具", type: boardKit.getToolType()),
             MenuItem(name: "画笔颜色", color: boardKit.getBrushColor()),
             MenuItem(name: "字体颜色", color: boardKit.getTextColor()),
-            MenuItem(name: "画笔粗细", progress: Float(boardKit.getBrushThin())/10.0),
-            MenuItem(name: "字体大小", progress: Float(boardKit.getTextSize())/40.0),
+            MenuItem(name: "画笔粗细", progress: Float(boardKit.getBrushThin())/10.0, sel: #selector(setBrushThin)),
+            MenuItem(name: "字体大小", progress: Float(boardKit.getTextSize())/40.0, sel: #selector(setTextSize)),
             MenuItem(name: "撤销"),
             MenuItem(name: "重做"),
             MenuItem(name: "清空涂鸦"),
@@ -109,8 +111,9 @@ class ARMenuViewController: UIViewController {
             MenuItem(name: "删除"),
             MenuItem(name: "上一页"),
             MenuItem(name: "下一页"),
-            MenuItem(name: "白板缩放", progress: Float(boardKit.getBoardScale())/300.0),
-            MenuItem(name: "背景颜色", color: boardKit.getBackgroundColor())
+            MenuItem(name: "白板缩放", progress: Float(boardKit.getBoardScale())/200.0, sel: #selector(setBoardScale)),
+            MenuItem(name: "背景颜色", color: boardKit.getBackgroundColor()),
+            MenuItem(name: "白板比例")
         ])
     ]
 
@@ -169,31 +172,13 @@ class ARMenuViewController: UIViewController {
     }
     
     @objc func boardScaleChange(nofi: Notification) {
-        menus[1].rows[4].progress = Float(boardKit.getBoardScale())/300.0
+        menus[1].rows[4].progress = Float(boardKit.getBoardScale() - 100)/200.0
         tableView.reloadRows(at: [IndexPath(row: 4, section: 1)], with: .none)
     }
     
     @objc func boardBackgroundColorChange(nofi: Notification) {
         menus[1].rows[5].color = boardKit.getBackgroundColor()
         tableView.reloadRows(at: [IndexPath(row: 5, section: 1)], with: .automatic)
-    }
-    
-    @objc func sliderValueChange(slider: UISlider) {
-        if slider.tag == 4 {
-            /// 画笔粗细
-            if slider.value >= 0.1 {
-                boardKit.setBrushThin(UInt32(slider.value * 10))
-            }
-            menus[0].rows[4].progress = slider.value
-        } else if slider.tag == 5 {
-            /// 字体大小
-            boardKit.setTextSize(UInt32(10 + slider.value * 40))
-            menus[0].rows[5].progress = slider.value
-        } else {
-            /// 白板缩放
-            boardKit.setBoardScale(UInt32(slider.value * 300))
-            menus[1].rows[4].progress = slider.value
-        }
     }
     
     @objc func switchValueChange(switchOn: UISwitch) {
@@ -257,11 +242,10 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
         if menuItem.menuType == .slider {
             // slider
             let sliderView = UISlider(frame: CGRect(x: 0, y: 0, width: 150, height: 5))
-            sliderView.tag = (indexPath.section == 1) ? 100 : indexPath.row
             sliderView.value = Float(menuItem.progress)
             sliderView.tintColor = UIColor(hexString: "#294BFF")
             sliderView.backgroundColor = UIColor(hexString: "#EBECF0")
-            sliderView.addTarget(self, action: #selector(sliderValueChange), for: .valueChanged)
+            sliderView.addTarget(self, action: menuItem.selector!, for: .valueChanged)
             cell?.accessoryView = sliderView
             
         } else if menuItem.menuType == .on_off {
@@ -273,7 +257,7 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
             
         } else if menuItem.menuType == .label {
             // text
-            let label = UILabel(frame: CGRect(x: 20, y: 0, width: 240, height: 36))
+            let label = UILabel(frame: CGRect(x: 30, y: 0, width: 240, height: 36))
             label.backgroundColor = UIColor(hexString: "#EBECF0")
             label.textColor = UIColor(hexString: "#9D9DB3")
             label.textAlignment = .center
@@ -307,7 +291,7 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
         let menuItem = menus[indexPath.section].rows[indexPath.row]
         if menuItem.identifier.count != 0 {
             guard let toolVc = storyboard?.instantiateViewController(withIdentifier: menuItem.identifier) else { return }
-            toolVc.modalPresentationStyle = .overCurrentContext
+            toolVc.modalPresentationStyle = .overFullScreen
             
             if toolVc is ARColorViewController {
                 let colorVc = toolVc as! ARColorViewController
@@ -358,6 +342,7 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
                     inputText = textField
                     inputText.placeholder = "请输入背景URL"
                     inputText.clearButtonMode = .whileEditing
+                    inputText.text = "https://upload-images.jianshu.io/upload_images/2478176-0ca135c64dda850e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
                 }
                 self.present(alertVc, animated: true, completion: nil)
             }
@@ -377,8 +362,48 @@ extension ARMenuViewController: UITableViewDataSource, UITableViewDelegate {
             } else if indexPath.row == 3 {
                 /// 下一页
                 boardKit.nextBoard()
+            } else if indexPath.row == 6 {
+                /// 白板比例
+                let alertVc = UIAlertController.init(title: "白板比例", message: "调整白板比例", preferredStyle: .actionSheet)
+                let action0 = UIAlertAction.init(title: "4:3", style:.default) { (action:UIAlertAction) ->() in
+                    boardKit.setBoardRatio("4:3")
+                }
+                
+                let action1 = UIAlertAction.init(title: "16:9", style:.default) { (action:UIAlertAction) ->() in
+                    boardKit.setBoardRatio("16:9")
+                }
+                
+                let cancel = UIAlertAction.init(title: "取消", style:.cancel)
+                
+                alertVc.addAction(action0)
+                alertVc.addAction(action1)
+                alertVc.addAction(cancel)
+                self.present(alertVc, animated: true, completion: nil)
+                
             }
         }
+    }
+}
+
+extension ARMenuViewController {
+    @objc private func setBrushThin(slider: UISlider) {
+        /// 画笔粗细
+        if slider.value >= 0.1 {
+            boardKit.setBrushThin(UInt32(slider.value * 10))
+        }
+        menus[0].rows[4].progress = slider.value
+    }
+    
+    @objc private func setTextSize(slider: UISlider) {
+        /// 字体大小
+        boardKit.setTextSize(UInt32(10 + slider.value * 40))
+        menus[0].rows[5].progress = slider.value
+    }
+    
+    @objc private func setBoardScale(slider: UISlider) {
+        /// 白板缩放
+        boardKit.setBoardScale(100 + UInt32(slider.value * 200))
+        menus[1].rows[4].progress = slider.value
     }
 }
 

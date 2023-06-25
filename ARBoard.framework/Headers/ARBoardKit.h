@@ -330,6 +330,21 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (UInt32)getBoardScale;
 
+/** 设置当前白板页宽高比
+ 
+ @param ratio 要设置的白板宽高比
+ 
+ **Note**
+  格式如: "4:3"、"16:9"
+*/
+- (void)setBoardRatio:(NSString *)ratio;
+
+/** 获取当前白板页宽高比
+
+ @rentrun 白板宽高比
+*/
+- (NSString *)getBoardRatio;
+
 @end
 
 NS_ASSUME_NONNULL_END
