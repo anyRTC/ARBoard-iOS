@@ -21,8 +21,6 @@
 		63A1563B274C88FA00C07876 /* AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A1563A274C88FA00C07876 /* AppID.swift */; };
 		63E90DDF27683B230046EC57 /* ARBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E90DDE27683B230046EC57 /* ARBaseNavigationController.swift */; };
 		74C782D5EB6145A179E3720F /* Pods_AR_Board_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B404EA02BCBC8D1BB009A2 /* Pods_AR_Board_Tutorial.framework */; };
-		8A9E9E482A41A84600788A7E /* ARBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E9E462A41A83E00788A7E /* ARBoard.framework */; };
-		8A9E9E492A41A84600788A7E /* ARBoard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9E9E462A41A83E00788A7E /* ARBoard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AB1095B2A26F14C00C1FCBD /* UIView+ARUIToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB109592A26F14C00C1FCBD /* UIView+ARUIToast.m */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8A9E9E492A41A84600788A7E /* ARBoard.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,7 +55,6 @@
 		63A101CC26F3294E0024A2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A1563A274C88FA00C07876 /* AppID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppID.swift; sourceTree = "<group>"; };
 		63E90DDE27683B230046EC57 /* ARBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARBaseNavigationController.swift; sourceTree = "<group>"; };
-		8A9E9E462A41A83E00788A7E /* ARBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARBoard.framework; sourceTree = "<group>"; };
 		8AB109582A26F14B00C1FCBD /* AR-Board-Tutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AR-Board-Tutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AB109592A26F14C00C1FCBD /* UIView+ARUIToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ARUIToast.m"; sourceTree = "<group>"; };
 		8AB1095A2A26F14C00C1FCBD /* UIView+ARUIToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ARUIToast.h"; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A9E9E482A41A84600788A7E /* ARBoard.framework in Frameworks */,
 				74C782D5EB6145A179E3720F /* Pods_AR_Board_Tutorial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,7 +118,6 @@
 		63A101D626F329C00024A2C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A9E9E462A41A83E00788A7E /* ARBoard.framework */,
 				29B404EA02BCBC8D1BB009A2 /* Pods_AR_Board_Tutorial.framework */,
 			);
 			name = Frameworks;
@@ -175,7 +169,6 @@
 				63A101B826F329450024A2C1 /* Frameworks */,
 				63A101B926F329450024A2C1 /* Resources */,
 				6370486A26F5CC8B001C6401 /* Embed Frameworks */,
-				A9376D3F23F2DFBD675E67A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,23 +226,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A9376D3F23F2DFBD675E67A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AR-Board-Tutorial/Pods-AR-Board-Tutorial-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D472EE90CC0031B70A2174DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

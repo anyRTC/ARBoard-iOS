@@ -1,6 +1,0 @@
-framework module ARBoard {
-  umbrella header "ARBoard.h"
-
-  export *
-  module * { export * }
-}
